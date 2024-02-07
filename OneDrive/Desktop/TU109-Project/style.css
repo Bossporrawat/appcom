@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: beige;
+    padding: 20px 50px;
+    font-size: 20px;
+}
+.nav .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.nav .navbar a{
+    padding:0px 10px;
+    text-decoration: none;
+    color: black;
+}
