@@ -232,10 +232,9 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 1.75rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .box .content .percent svg {
@@ -320,15 +319,13 @@
 
     </style>
     <div class="container">
-        <div style="text-align: center;">
-          <h1 style="margin-top: 50px;">Input Tracking Number For tracking process</h1><br>
-          <input type="text" id="myInput" style="text-align: center;" value="Tracking Number"><br>
-          <button onclick="changeValue()" style="margin-top: 10px;">Confirm</button><br>
-        </div><br>
+        <h2 style="margin-top: 50px;">รับค่าและเปลี่ยนค่าจากฟิลด์ input</h2>
+        <input type="text" id="myInput" value="ค่าเริ่มต้น"><br>
+        <button onclick="changeValue()">เปลี่ยนค่า</button><br>
         <div class="box">
           <div class="shadow"></div>
           <div class="content">
-            <div class="percent" data-text="Notification of Details" style="--num: 100" id="fValue">
+            <div class="percent" data-text="HTML" style="--num: 100" id="fValue">
               <div class="dot"></div>
               <svg>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -344,7 +341,7 @@
         <div class="box">
           <div class="shadow"></div>
           <div class="content">
-            <div class="percent" data-text="Confirmation of expenses" style="--num: 50" id="sValue">
+            <div class="percent" data-text="CSS" style="--num: 50" id="sValue">
               <div class="dot"></div>
               <svg>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -360,7 +357,7 @@
         <div class="box">
           <div class="shadow"></div>
           <div class="content">
-            <div class="percent" data-text="Serviceable" style="--num: 0" id="tValue">
+            <div class="percent" data-text="JS" style="--num: 0" id="tValue">
               <div class="dot"></div>
               <svg>
                 <circle cx="70" cy="70" r="70"></circle>
@@ -390,7 +387,7 @@
             })
             .catch(error => console.error('Error:', error));
         </script>
-        <!--<br><h1 style="text-align: center;margin: 10px;margin-bottom: 50px;"> <div>Status </div><div style="font-size: medium;"><br> In the process of confirmation of expenses </div></h1>-->
+        <h1 style="text-align: center;margin: 10px;margin-bottom: 50px;"> <div>Status </div><div style="font-size: medium;"><br> In the process of agreeing on price </div></h1>
       </div>
 
     <!-- Status End -->
