@@ -325,8 +325,8 @@
           <h2 style="margin-top: 50px; text-align: center;">Input Tracking Number For tracking proces</h2><br>
           </div>
           <div>
-          <input type="number" id="myInput" value="000000"><br>
-          <button onclick="changeValue()" style="margin-top: 2%;">Confirm</button><br>
+          <input type="text" id="myInput" value="000000"><br>
+          <button onclick="myFunction()" style="margin-top: 2%;">Confirm</button><br>
           </div>
         </div>
         <div class="box">
@@ -373,6 +373,7 @@
             </div>
             <div class="number">
               <h2 id="tset"></h2>
+              <p id="demo"></p>
             </div>
           </div>
           
@@ -381,18 +382,27 @@
             fetch('data.json')
             .then(response => response.json())
             .then(data => {
+
                 // ใช้ข้อมูลจากไฟล์ JSON ที่นี่
-                var num1 = data["000001"]["f"];
-                var num2 = data["000001"]["s"];
-                var num3 = data["000001"]["t"];
+                var num1 = data[input]["f"];
+                var num2 = data[input]["s"];
+                var num3 = data[input]["t"];
                 document.getElementById("fValue").style.setProperty('--num', num1);
                 document.getElementById("sValue").style.setProperty('--num', num2);
                 document.getElementById("tValue").style.setProperty('--num', num3);
-                document.getElementById("fset").innerHTML = data["000001"]["f"] + "%";
-                document.getElementById("sset").innerHTML = data["000001"]["s"] + "%";
-                document.getElementById("tset").innerHTML = data["000001"]["t"] + "%";
+                document.getElementById("fset").innerHTML = data[input]["f"] + "%";
+                document.getElementById("sset").innerHTML = data[input]["s"] + "%";
+                document.getElementById("tset").innerHTML = data[input]["t"] + "%";
             })
             .catch(error => console.error('Error:', error));
+            function myFunction() {
+              let input = document.getElementById("myInput").value;
+              if (data[input]) {
+                document.getElementById("demo").innerHTML = "พบข้อมูล: " + JSON.stringify(data[input]);
+              } else {
+                document.getElementById("demo").innerHTML = "ไม่พบข้อมูล";
+              }
+            }
         </script>
         <h1 style="text-align: center;margin: 10px;margin-bottom: 50px;"> <div>Status </div><div style="font-size: medium;"><br> In the process of agreeing on price </div></h1>
       </div>
