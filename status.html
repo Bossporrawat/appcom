@@ -374,19 +374,21 @@
           
         </div>
         <script>
+            var inputValue = 0;
+            inputValue = document.getElementById("myInput").value;
             fetch('data.json')
             .then(response => response.json())
             .then(data => {
                 // ใช้ข้อมูลจากไฟล์ JSON ที่นี่
-                var num1 = data["000001"]["f"];
-                var num2 = data["000001"]["s"];
-                var num3 = data["000001"]["t"];
-                document.getElementById("fValue").style.setProperty('--num', num1);
-                document.getElementById("sValue").style.setProperty('--num', num2);
-                document.getElementById("tValue").style.setProperty('--num', num3);
-                document.getElementById("fset").innerHTML = data["000001"]["f"] + "%";
-                document.getElementById("sset").innerHTML = data["000001"]["s"] + "%";
-                document.getElementById("tset").innerHTML = data["000001"]["t"] + "%";
+                var num1 = data[inputValue]["f"];
+                var num2 = data[inputValue]["s"];
+                var num3 = data[inputValue]["t"];
+                document.getElementById(inputValue).style.setProperty('--num', num1);
+                document.getElementById(inputValue).style.setProperty('--num', num2);
+                document.getElementById(inputValue).style.setProperty('--num', num3);
+                document.getElementById(inputValue).innerHTML = data[inputValue]["f"] + "%";
+                document.getElementById(inputValue).innerHTML = data[inputValue]["s"] + "%";
+                document.getElementById(inputValue).innerHTML = data[inputValue]["t"] + "%";
             })
             .catch(error => console.error('Error:', error));
         </script>
