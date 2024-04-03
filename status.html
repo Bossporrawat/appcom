@@ -321,8 +321,16 @@
     <div class="container">
       <div style="text-align: center;">
         <h1 style="margin-top: 50px; text-align: center;">Input Tracking Number For tracking process</h1><br>
-        <input type="text" id="myInput" style="text-align: center;" value="Tracking Number"><br>
-        <button onclick="changeValue()" style="margin-top: 10px;">Confirm</button><br>
+        <input type="number" id="myInput" style="text-align: center;" value="000000"><br>
+        <button onclick="storeValue()" style="margin-top: 10px;">Confirm</button><br>
+        <script>
+          var data = {};
+
+          function storeValue() {
+            // รับค่าจากฟิลด์ input
+            var inputValue = document.getElementById("myInput").value;
+          }
+        </script>
       </div><br>
         <div class="box">
           <div class="shadow"></div>
@@ -377,15 +385,15 @@
             .then(response => response.json())
             .then(data => {
                 // ใช้ข้อมูลจากไฟล์ JSON ที่นี่
-                var num1 = data["000001"]["f"];
-                var num2 = data["000001"]["s"];
-                var num3 = data["000001"]["t"];
+                var num1 = data[inputValue]["f"];
+                var num2 = data[inputValue]["s"];
+                var num3 = data[inputValue]["t"];
                 document.getElementById("fValue").style.setProperty('--num', num1);
                 document.getElementById("sValue").style.setProperty('--num', num2);
                 document.getElementById("tValue").style.setProperty('--num', num3);
-                document.getElementById("fset").innerHTML = data["000001"]["f"] + "%";
-                document.getElementById("sset").innerHTML = data["000001"]["s"] + "%";
-                document.getElementById("tset").innerHTML = data["000001"]["t"] + "%";
+                document.getElementById("fset").innerHTML = data[inputValue]["f"] + "%";
+                document.getElementById("sset").innerHTML = data[inputValue]["s"] + "%";
+                document.getElementById("tset").innerHTML = data[inputValue]["t"] + "%";
             })
             .catch(error => console.error('Error:', error));
         </script>
